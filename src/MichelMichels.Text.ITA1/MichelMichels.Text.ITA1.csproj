@@ -9,6 +9,7 @@
     <PackageProjectUrl>https://github.com/MichelMichels/ITA1</PackageProjectUrl>
     <RepositoryType>git</RepositoryType>
     <PackageReadmeFile>README.md</PackageReadmeFile>
+    <RootNamespace>MichelMichels.Text</RootNamespace>
     <Title>MichelMichels.Text.ITA1</Title>
     <Authors>Michel Michels</Authors>
     <PackageLicenseExpression>MIT</PackageLicenseExpression>

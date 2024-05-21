@@ -1,6 +1,7 @@
-﻿using System.Text;
+﻿using MichelMichels.Text.ITA1;
+using System.Text;
 
-namespace MichelMichels.Text.ITA1;
+namespace MichelMichels.Text;
 
 /*
  * 
@@ -13,8 +14,6 @@ namespace MichelMichels.Text.ITA1;
  */
 public class Ita1Encoding : Encoding
 {
-
-
     private const byte SWITCH_FIGURES = 0x08;
     private const byte SWITCH_LETTERS = 0x10;
 
