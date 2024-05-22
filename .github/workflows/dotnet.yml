@@ -40,4 +40,4 @@ jobs:
         if: always()
         with:
           files: |
-            /**/**/**/**/**/**/**/TestResults/*.trx
+            /home/runner/work/ITA1/ITA1/tests/MichelMichels.Text.ITA1Tests/TestResults/*.trx
