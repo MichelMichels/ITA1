@@ -34,10 +34,10 @@ jobs:
 
       - name: Test
         run: dotnet test --logger:trx
-
+      
       - name: Publish Test Results
         uses: EnricoMi/publish-unit-test-result-action@v2
         if: always()
         with:
           files: |
-            /home/runner/work/ITA1/ITA1/src/MichelMichels.Text.ITA1Tests/TestResults/*.trx
+            TestResults/*.trx                
