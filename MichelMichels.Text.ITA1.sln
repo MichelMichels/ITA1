@@ -5,7 +5,7 @@ VisualStudioVersion = 17.9.34728.123
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MichelMichels.Text.ITA1", "src\MichelMichels.Text.ITA1\MichelMichels.Text.ITA1.csproj", "{17E1E7D6-8D42-49C3-A41E-C9DF95492454}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MichelMichels.Text.ITA1Tests", "src\MichelMichels.Text.ITA1Tests\MichelMichels.Text.ITA1Tests.csproj", "{3FA83562-B709-4691-906F-DAFC6BD198FF}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MichelMichels.Text.ITA1Tests", "tests\MichelMichels.Text.ITA1Tests\MichelMichels.Text.ITA1Tests.csproj", "{3FA83562-B709-4691-906F-DAFC6BD198FF}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{4357D778-9CF5-43DF-98F5-43A8002624D9}"
 	ProjectSection(SolutionItems) = preProject

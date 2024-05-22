@@ -17,7 +17,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\MichelMichels.Text.ITA1\MichelMichels.Text.ITA1.csproj" />
+    <ProjectReference Include="..\..\src\MichelMichels.Text.ITA1\MichelMichels.Text.ITA1.csproj" />
   </ItemGroup>
 
   <ItemGroup>
