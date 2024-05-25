@@ -4,7 +4,7 @@
 [![NuGet Version](https://img.shields.io/nuget/v/MichelMichels.Text.ITA1)](https://www.nuget.org/packages/MichelMichels.Text.ITA1)
 [![.NET](https://github.com/MichelMichels/ITA1/actions/workflows/dotnet.yml/badge.svg)](https://github.com/MichelMichels/ITA1/actions/workflows/dotnet.yml)
 
-This project contains a derived C# class of [`System.Text.Encoding`](https://learn.microsoft.com/en-us/dotnet/api/system.text.encoding) for the international version of [International Telegraph Alphabet no 1 (ITA1) (aka Baudot Code)](https://en.wikipedia.org/wiki/Baudot_code).
+This project contains a derived C# class of [`System.Text.Encoding`](https://learn.microsoft.com/en-us/dotnet/api/system.text.encoding) for the original version of [International Telegraph Alphabet no 1 (ITA1) (aka Baudot Code)](https://en.wikipedia.org/wiki/Baudot_code).
 
 <details>
 
