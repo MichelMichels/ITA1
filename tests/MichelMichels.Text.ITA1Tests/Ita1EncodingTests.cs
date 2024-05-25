@@ -70,4 +70,19 @@ public class Ita1EncodingTests
         // Assert
         Assert.AreEqual(expectedCharCount, count);
     }
+
+    [TestMethod]
+    [DataRow("hello", new byte[] { })]
+    [DataRow("Hello", new byte[] { 0x0B })]
+    public void LowerCaseTest(string input, byte[] expectedBytes)
+    {
+        // Arrange
+        Encoding ita1 = new Ita1Encoding();
+
+        // Act
+        byte[] bytes = ita1.GetBytes(input);
+
+        // Assert
+        Assert.IsTrue(AreArraysEqual(expectedBytes, bytes));
+    }
 }
