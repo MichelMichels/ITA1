@@ -54,4 +54,20 @@ public class Ita1EncodingTests
         // Assert
         Assert.AreEqual(byteCount, count);
     }
+
+    [TestMethod]
+    [DataRow(new byte[] { 0x0B, 0x02, 0x1B, 0x1B, 0x07, 0x10, 0x16, 0x07, 0x1C, 0x1B, 0x0F }, 11)]
+    [DataRow(new byte[] { 0x08, 0x01 }, 1)]
+    [DataRow(new byte[] { 0x08, 0x01, 0x10, 0x01 }, 2)]
+    public void GetCharCountTest(byte[] bytes, int expectedCharCount)
+    {
+        // Arrange
+        Encoding ita1 = new Ita1Encoding();
+
+        // Act
+        int count = ita1.GetCharCount(bytes);
+
+        // Assert
+        Assert.AreEqual(expectedCharCount, count);
+    }
 }

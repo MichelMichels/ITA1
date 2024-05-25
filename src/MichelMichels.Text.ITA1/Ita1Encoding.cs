@@ -98,7 +98,7 @@ public class Ita1Encoding : Encoding
     {
         CharacterMode currentMode = CharacterMode.Letters;
 
-        List<byte> result = new();
+        List<byte> result = [];
 
         foreach (char c in chars)
         {
@@ -151,17 +151,79 @@ public class Ita1Encoding : Encoding
 
     public override int GetCharCount(byte[] bytes, int index, int count)
     {
-        throw new NotImplementedException();
+        int result = 0;
+        CharacterMode currentMode = CharacterMode.Letters;
+
+        foreach (byte b in bytes)
+        {
+            if (currentMode is CharacterMode.Letters)
+            {
+                if (b == SWITCH_FIGURES)
+                {
+                    currentMode = CharacterMode.Figures;
+                    continue;
+                }
+            }
+
+            if (currentMode is CharacterMode.Figures)
+            {
+                if (b == SWITCH_LETTERS)
+                {
+                    currentMode = CharacterMode.Letters;
+                    continue;
+                }
+            }
+
+            result++;
+        }
+
+        return result;
     }
 
     public override int GetChars(byte[] bytes, int byteIndex, int byteCount, char[] chars, int charIndex)
     {
-        throw new NotImplementedException();
+        CharacterMode currentMode = CharacterMode.Letters;
+
+        int characterCount = 0;
+        foreach (byte b in bytes)
+        {
+            if (currentMode is CharacterMode.Letters)
+            {
+                if (b == SWITCH_FIGURES)
+                {
+                    currentMode = CharacterMode.Letters;
+                    continue;
+                }
+
+                chars[characterCount] = _letterSetChars[b];
+            }
+
+            if (currentMode is CharacterMode.Figures)
+            {
+                if (b == SWITCH_LETTERS)
+                {
+                    currentMode = CharacterMode.Letters;
+                    continue;
+                }
+
+                chars[characterCount] = _figureSetChars[b];
+            }
+
+            characterCount++;
+        }
+
+        return characterCount;
     }
 
     public override int GetMaxByteCount(int charCount)
     {
-        throw new NotImplementedException();
+        /*
+         * The worst case scenario for ITA1 is a constant switch of letters and figures, 
+         * which would result in 2 bytes per character; 1 byte for switching charsets and 
+         * 1 byte for the character. This results in 2 bytes for 1 char.         
+         */
+
+        return charCount * 2;
     }
 
     public override int GetMaxCharCount(int byteCount)
