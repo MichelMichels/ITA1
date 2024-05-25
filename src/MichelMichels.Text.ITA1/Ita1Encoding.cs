@@ -228,7 +228,12 @@ public class Ita1Encoding : Encoding
 
     public override int GetMaxCharCount(int byteCount)
     {
-        throw new NotImplementedException();
+        /*
+         * The worst case scenario for ITA1 is 1 char per byte. This would mean that there 
+         * is no switching of charsets.
+         */
+
+        return byteCount;
     }
 
     private static byte GetLetterByte(char c)
