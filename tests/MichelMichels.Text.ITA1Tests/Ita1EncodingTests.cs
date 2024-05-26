@@ -178,8 +178,7 @@ public class Ita1EncodingTests
         }
 
         using MemoryStream ms = new(bytes);
-
-        using DebugStreamReader sr = new(ms, encoding, detectEncodingFromByteOrderMarks: false);
+        using StreamReader sr = new(ms, encoding, detectEncodingFromByteOrderMarks: false);
 
         // Act
         sr.ReadToEnd();
