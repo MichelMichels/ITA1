@@ -35,8 +35,10 @@ public class Ita1Encoding : Encoding
         int byteCount = 0;
         CharacterMode currentMode = CharacterMode.Letters;
 
-        foreach (char c in chars)
+        for (int i = index; i < count; i++)
         {
+            char c = chars[i];
+
             bool isCharFoundInLetterSet = _letterSetChars.Contains(c);
             bool isCharFoundInFiguresSet = _figureSetChars.Contains(c);
 
@@ -100,8 +102,10 @@ public class Ita1Encoding : Encoding
 
         List<byte> result = [];
 
-        foreach (char c in chars)
+        for (int i = charIndex; i < charCount; i++)
         {
+            char c = chars[i];
+
             bool isCharFoundInLetterSet = _letterSetChars.Contains(c);
             bool isCharFoundInFiguresSet = _figureSetChars.Contains(c);
 
@@ -154,8 +158,10 @@ public class Ita1Encoding : Encoding
         int result = 0;
         CharacterMode currentMode = CharacterMode.Letters;
 
-        foreach (byte b in bytes)
+        for (int i = index; i < count; i++)
         {
+            byte b = bytes[i];
+
             if (currentMode is CharacterMode.Letters)
             {
                 if (b == SWITCH_FIGURES)
@@ -184,9 +190,12 @@ public class Ita1Encoding : Encoding
     {
         CharacterMode currentMode = CharacterMode.Letters;
 
-        int characterCount = 0;
-        foreach (byte b in bytes)
+        int charCount = 0;
+
+        for (int i = byteIndex; i < byteCount; i++)
         {
+            byte b = bytes[i];
+
             if (currentMode is CharacterMode.Letters)
             {
                 if (b == SWITCH_FIGURES)
@@ -195,7 +204,8 @@ public class Ita1Encoding : Encoding
                     continue;
                 }
 
-                chars[characterCount] = _letterSetChars[b];
+                chars[charIndex] = _letterSetChars[b];
+                charCount++;
             }
 
             if (currentMode is CharacterMode.Figures)
@@ -206,13 +216,14 @@ public class Ita1Encoding : Encoding
                     continue;
                 }
 
-                chars[characterCount] = _figureSetChars[b];
+                chars[charIndex] = _figureSetChars[b];
+                charCount++;
             }
 
-            characterCount++;
+            charIndex++;
         }
 
-        return characterCount;
+        return charCount;
     }
 
     public override int GetMaxByteCount(int charCount)
