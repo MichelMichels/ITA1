@@ -14,6 +14,7 @@
     <Authors>Michel Michels</Authors>
     <PackageLicenseExpression>MIT</PackageLicenseExpression>
     <PackageTags>ita1 emile baudot code encoding international telegraph alphabet no 1</PackageTags>
+    <Version>1.1.0</Version>
   </PropertyGroup>
   <ItemGroup>
     <None Include="..\..\README.md" Pack="true" PackagePath="" />
